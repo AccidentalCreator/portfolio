@@ -1,0 +1,234 @@
+@font-face {
+    font-family: "Graphik";
+    src: url("../font/Graphik-Regular-Trial.otf");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Graphik";
+    padding: 10px;
+    line-height: 1.2;
+}
+
+main {
+    margin-top: 25%;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+h1 {
+    white-space: nowrap;
+}
+
+.nav-item {
+    font-size: large;
+    cursor: pointer;
+}
+
+#nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+#nav-list li {
+    padding-left: 25px;
+}
+
+#nav-list li a {
+    text-decoration: none;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation.with-offset::after {
+    width: calc(100% - 25px);
+    left: 25px;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navigate-down {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: xx-large;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: large;
+    color: dimgrey;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.projectsContainer {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.projectsContainer .project {
+    padding: 1em 0em;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.projectsContainer iframe {
+    border-radius: .3em;
+    width: 100%;
+    height: 80%;
+}
+
+.projectsContainer h4 {
+    margin-top: 5px;
+}
+
+.imageContainer {
+    text-align: center;
+    border-radius: .3em;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 80%;
+}
+
+#colourDropDropContainer {
+    background-color: white;
+}
+
+#colourDropDropImg {
+    width: 50%;
+}
+
+#rayTracerContainer {
+    background-color: black;
+}
+
+#rayTracerImg {
+    height: 100%;
+    width: auto;
+}
+
+.projectDescription {
+    color: gray;
+}
+
+details {
+    cursor: pointer;
+}
+
+details summary {
+    color: dimgrey;
+    list-style-type: none;
+}
+
+details p {
+    color: dimgrey;
+    cursor: default;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+a {
+    color: black;
+}
+
+details a {
+    color: dimgrey;
+}
+
+#about-me img {
+    width: 250px;
+    height: 250px;
+    margin-left: 50px;
+    float: right;
+}
+
+footer {
+    font-size: large;
+    padding-top: 2em;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+@media (max-width: 460px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav h1 {
+        order: 2;
+    }
+
+    h1.nav-item {
+        font-size: x-large;
+    }
+
+    #nav-list {
+        margin-bottom: 40px;
+        align-self: flex-end;
+    }
+
+    #about-me {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about-me img {
+        width: 100%;
+        height: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+
+    footer {
+        font-size: large;
+        padding-top: 2em;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer > * {
+        padding: 10px;
+    }
+}
